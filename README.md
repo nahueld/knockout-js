@@ -12,7 +12,9 @@ The list should appear on the same screen and be sorted by one of it's columns w
 
 ## Notes
 
-This application was created using [knockout-es6-components-webpack-boilerplate](https://github.com/abdennour/knockout-es6-components-webpack-boilerplate)
+- This application was created using [knockout-es6-components-webpack-boilerplate](https://github.com/abdennour/knockout-es6-components-webpack-boilerplate)
+- The application is continuously integrated using [Netlify](https://www.netlify.com/).
+- The live version can be found [here](https://peaceful-ritchie-153a6c.netlify.com/).
 
 # Prerequiestes
 
