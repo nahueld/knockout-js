@@ -1,7 +1,6 @@
 import LeadersList from "./LeadersList.component";
 import ko from "knockout";
 import { expect } from "chai";
-import sinon from "sinon";
 import { renderComponent } from "ko-component-tester";
 import SelectField from "../select_field/SelectField.component";
 

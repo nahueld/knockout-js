@@ -69,7 +69,7 @@ class App extends ViewModel {
             { id: "asc", label: "Asc" },
             { id: "desc", label: "Desc" }
           ]),
-          selected: ko.observable({ id: "asc", label: "Asc" }),
+          selected: ko.observable({ id: "desc", label: "Desc" }),
           onChange: () => {
             const sortingField = this.appState.leadersList.sortingField.selected()
               .id;

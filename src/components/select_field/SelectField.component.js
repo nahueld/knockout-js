@@ -1,9 +1,10 @@
-import viewModel from "./SelectField.vm";
 import template from "./SelectField.tmpl.html";
 
 const SelectField = {
   template,
-  viewModel,
+  viewModel: function(params) {
+    this.$params = params;
+  },
   component: "select-field"
 };
 

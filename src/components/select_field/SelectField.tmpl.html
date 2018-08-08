@@ -1,7 +1,8 @@
 <div class="form-group">
   <label data-bind="{ text: $params.label, attr: { for: $params.id } }"></label>
   <select class="form-control custom-select" data-bind="{ options: $params.options, 
-    optionsText: 'label', 
+    optionsText: (item) => item.label, 
     value: $params.selected, 
-    event:{ change: $params.onChange } }" />
+    event:{ change: $params.onChange }
+  }" />
 </div>
