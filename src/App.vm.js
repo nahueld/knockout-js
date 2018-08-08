@@ -94,6 +94,14 @@ class App {
       );
       this.leaderEntries.push(newLeader);
       this.sortLeadersList();
+      this.cleanLeaderForm();
+    };
+
+    this.cleanLeaderForm = () => {
+      this.fields.forEach(f => {
+        f.fieldValue("");
+        f.fieldValue.isModified(false);
+      });
     };
 
     this.appState = {
