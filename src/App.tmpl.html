@@ -1,16 +1,10 @@
-<!-- <h1 data-bind="{ text: message, style: {color: $params.color}}" class="hello-heading"></h1>
-
-<button type="button" data-bind="{click: sayHello, style: { background: $params.color, 'border-color': $params.color}}" class="hello-btn">
-  Say Hello!
-</button>
- -->
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <leader-form>
+    <div class="col-md-4">
+      <div data-bind="component: { name: 'leader-form', params: appState.leaderForm }"></div>
     </div>
-    <div class="col-md-6">
-      The list
+    <div class="col-md-8">
+      <div data-bind="component: { name: 'leaders-list', params: appState.leadersList }"></div>
     </div>
   </div>
 </div>

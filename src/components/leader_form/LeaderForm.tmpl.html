@@ -1,7 +1,6 @@
 <form>
-  <div data-bind="component: { name: 'form-field', params: nameField }"></div>
-  <div data-bind="component: { name: 'form-field', params: lastNameField }"></div>
-  <div data-bind="component: { name: 'form-field', params: ageField }"></div>
-  <div data-bind="component: { name: 'form-field', params: scoreField }"></div>
-  <button type="button" class="btn btn-primary" data-bind="click: sendForm">Submit</button>
+  <div data-bind="foreach: $params.fields">
+    <div data-bind="component: { name: 'form-field', params: $data }"></div>
+  </div>
+  <button type="button" class="btn btn-primary" data-bind="click: $params.onSubmit">Create</button>
 </form>
