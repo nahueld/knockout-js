@@ -34,7 +34,6 @@ describe("LeaderForm Component", () => {
       });
       expect(leaderForm.children().length).to.eqls(1);
       expect(leaderForm.find("label").text()).to.eqls("Name");
-      expect(leaderForm.find("button").html()).to.be.empty;
     });
 
     it("should render leader form button", () => {

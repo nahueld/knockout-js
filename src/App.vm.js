@@ -63,38 +63,16 @@ class App {
 
     this.leaderEntries = ko.observableArray([]);
 
-    this.sortingFieldOptions = ko.observableArray(
-      _(this.fields)
-        .map(({ id, label }) => ({ id, label }))
-        .value()
-    );
+    this.sortingFieldOptions = ko.observableArray(this.getSortingOptions());
 
-    this.sortingFieldSelected = ko.observable(_(this.fields).first());
+    this.sortingFieldSelected = ko.observable();
 
     this.sortingOrderOptions = ko.observableArray([
       { id: "asc", label: "Asc" },
       { id: "desc", label: "Desc" }
     ]);
 
-    this.sortingOrderSelected = ko.observable({ id: "desc", label: "Desc" });
-
-    this.sortLeadersList = () => {
-      let sorted = _(this.leaderEntries())
-        .orderBy(this.sortingFieldSelected().id, this.sortingOrderSelected().id)
-        .value();
-      this.leaderEntries(sorted);
-    };
-
-    this.submitLeaderForm = () => {
-      if (!this.validationModel.isValid()) return;
-      const newLeader = _.reduce(
-        this.fields,
-        (sum, curr) => _.extend(sum, { [curr.id]: curr.fieldValue() }),
-        {}
-      );
-      this.leaderEntries.push(newLeader);
-      this.sortLeadersList();
-    };
+    this.sortingOrderSelected = ko.observable();
 
     this.appState = {
       leaderForm: {
@@ -119,6 +97,30 @@ class App {
         }
       }
     };
+  }
+
+  submitLeaderForm() {
+    if (!this.validationModel.isValid()) return;
+    const newLeader = _.reduce(
+      this.fields,
+      (sum, curr) => _.extend(sum, { [curr.id]: curr.fieldValue() }),
+      {}
+    );
+    this.leaderEntries.push(newLeader);
+    this.sortLeadersList();
+  }
+
+  sortLeadersList() {
+    let sorted = _(this.leaderEntries())
+      .orderBy(this.sortingFieldSelected().id, this.sortingOrderSelected().id)
+      .value();
+    this.leaderEntries(sorted);
+  }
+
+  getSortingOptions() {
+    return _(this.fields)
+      .map(({ id, label }) => ({ id, label }))
+      .value();
   }
 }
 
