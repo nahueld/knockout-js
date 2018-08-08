@@ -16,12 +16,6 @@ The list should appear on the same screen and be sorted by one of it's columns w
 - The application is continuously integrated using [Netlify](https://www.netlify.com/).
 - The live version can be found [here](https://peaceful-ritchie-153a6c.netlify.com/).
 
-## Implementation assumptions and choices
-
-- We are using a list to display the values because it was requested, some other elements may be better fit, like cards or a responsive table.
-- Design is responsive but it does not look good, we assume that the important part is the app itself.
-- Tryied to concentrate the state in one place and making most of the components 'dumb' components with the exception of the application itself.
-
 # Prerequiestes
 
 - Node 8.11.1 LTS
