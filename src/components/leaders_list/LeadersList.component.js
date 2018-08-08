@@ -1,9 +1,10 @@
-import viewModel from "./LeadersList.vm";
 import template from "./LeadersList.tmpl.html";
 
 const LeadersList = {
   template,
-  viewModel,
+  viewModel: function(params) {
+    this.$params = params;
+  },
   component: "leaders-list"
 };
 

@@ -47,7 +47,9 @@ class App extends ViewModel {
         }
       },
       leadersList: {
-        entries: ko.observableArray(),
+        entries: ko.observableArray([
+          // { name: "john", lastName: "doe", age: 40, score: 100 }
+        ]),
         sortingField: {
           label: "Field",
           id: "sortingField",

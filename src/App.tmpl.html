@@ -1,10 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div id="left-panel" class="col-md-4 p-5 h-100">
       <div data-bind="component: { name: 'leader-form', params: appState.leaderForm }"></div>
     </div>
-    <div class="col-md-8">
-      <div data-bind="component: { name: 'leaders-list', params: appState.leadersList }"></div>
+    <div class="col-md-8 p-5 h-100">
+      <div class="h-100" data-bind="component: { name: 'leaders-list', params: appState.leadersList }"></div>
     </div>
   </div>
 </div>

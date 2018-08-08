@@ -1,7 +1,22 @@
-<div>
+<div class="h-100">
   <div data-bind="component: { name: 'select-field', params: $params.sortingField }"></div>
   <div data-bind="component: { name: 'select-field', params: $params.orderingField }"></div>
-  <ul class="list-group" data-bind="foreach: $params.entries">
-    <li data-bind="{ text: JSON.stringify($data) }" class="list-group-item" />
-  </ul>
+  <div data-bind="if: $params.entries().length == 0">
+    <div class="d-flex justify-content-center mt-5">
+      <h4>The list is empty :(</h4>
+    </div>
+  </div>
+  <div data-bind="if: $params.entries().length > 0">
+    <ul class="list-group mt-5" data-bind="foreach: $params.entries">
+      <li class="list-group-item mt-1 mb-1">
+        <div class="d-flex justify-content-between w-100 text-center">
+          <div data-bind="text: name"></div>
+          <div data-bind="text: lastName"></div>
+          <div data-bind="text: age"></div>
+          <div data-bind="text: score"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
 </div>

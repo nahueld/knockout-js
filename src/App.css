@@ -6,3 +6,7 @@ body {
 .field-error-container {
   color: crimson;
 }
+
+#left-panel {
+  background-color: aliceblue;
+}
