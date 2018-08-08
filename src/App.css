@@ -3,7 +3,7 @@ body {
   height: 100%;
 }
 
-.field-error-container {
+.validationMessage {
   color: crimson;
 }
 

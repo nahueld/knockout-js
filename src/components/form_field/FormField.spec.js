@@ -18,13 +18,6 @@ describe("FormField Component", () => {
       expect(formField.find("small").text()).to.be.empty;
     });
 
-    it("should render text input with error message", () => {
-      const formField = renderComponent(FormField, {
-        error: "Something went wrong"
-      });
-      expect(formField.find("small").text()).to.be.eqls("Something went wrong");
-    });
-
     it("should render text input with value", () => {
       const formField = renderComponent(FormField, {
         fieldValue: "Jorgito"

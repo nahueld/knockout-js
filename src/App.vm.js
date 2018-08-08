@@ -1,31 +1,63 @@
 import ko from "knockout";
+require("knockout.validation");
 
 class App {
   constructor() {
+    ko.validation.init();
+
+    this.nameFieldValue = ko
+      .observable()
+      .extend({ required: true })
+      .extend({ minLength: 2 })
+      .extend({ maxLength: 10 });
+
+    this.lastNameFieldValue = ko
+      .observable()
+      .extend({ required: true })
+      .extend({ minLength: 2 })
+      .extend({ maxLength: 10 });
+
+    this.ageFieldValue = ko
+      .observable()
+      .extend({ required: true })
+      .extend({ number: true })
+      .extend({ min: 18 })
+      .extend({ max: 100 });
+
+    this.scoreFieldValue = ko
+      .observable()
+      .extend({ required: true })
+      .extend({ number: true })
+      .extend({ min: 0 })
+      .extend({ max: 100 });
+
+    this.validationModel = ko.validatedObservable({
+      nameFieldValidation: this.nameFieldValue,
+      lastNameFieldValidation: this.lastNameFieldValue,
+      ageFieldValueValidation: this.ageFieldValue,
+      scoreFieldValidation: this.scoreFieldValue
+    });
+
     this.fields = [
       {
         label: "Name",
         id: "name",
-        fieldValue: ko.observable(),
-        error: ko.observable()
+        fieldValue: this.nameFieldValue
       },
       {
         label: "Last Name",
         id: "lastName",
-        fieldValue: ko.observable(),
-        error: ko.observable()
+        fieldValue: this.lastNameFieldValue
       },
       {
         label: "Age",
         id: "age",
-        fieldValue: ko.observable(),
-        error: ko.observable()
+        fieldValue: this.ageFieldValue
       },
       {
         label: "Score",
         id: "score",
-        fieldValue: ko.observable(),
-        error: ko.observable()
+        fieldValue: this.scoreFieldValue
       }
     ];
 
@@ -54,6 +86,7 @@ class App {
     };
 
     this.submitLeaderForm = () => {
+      if (!this.validationModel.isValid()) return;
       const newLeader = _.reduce(
         this.fields,
         (sum, curr) => _.extend(sum, { [curr.id]: curr.fieldValue() }),
