@@ -1,3 +1,7 @@
-<ul class="list-group" data-bind="foreach: $params.entries">
-  <li data-bind="{ text: JSON.stringify($data) }" class="list-group-item" />
-</ul>
+<div>
+  <div data-bind="component: { name: 'select-field', params: $params.sortingField }"></div>
+  <div data-bind="component: { name: 'select-field', params: $params.orderingField }"></div>
+  <ul class="list-group" data-bind="foreach: $params.entries">
+    <li data-bind="{ text: JSON.stringify($data) }" class="list-group-item" />
+  </ul>
+</div>
