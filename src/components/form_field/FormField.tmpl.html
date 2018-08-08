@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label data-bind="{ text: label, attr: { for: id } }"></label>
-  <input data-bind="{ attr: { id }, textInput: fieldValue }" type="text" class="form-control">
-  <small data-bind="{ text: error }" class="field-error-container" />
+  <label data-bind="{ text: $params.label, attr: { for: $params.id } }"></label>
+  <input data-bind="{ attr: { id: $params.id }, textInput: $params.fieldValue }" type="text" class="form-control">
+  <small data-bind="{ text: $params.error }" class="field-error-container" />
 </div>

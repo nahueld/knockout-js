@@ -1,9 +1,10 @@
-import viewModel from "./FormField.vm";
 import template from "./FormField.tmpl.html";
 
 const FormField = {
   template,
-  viewModel,
+  viewModel: function(params) {
+    this.$params = params;
+  },
   component: "form-field"
 };
 
