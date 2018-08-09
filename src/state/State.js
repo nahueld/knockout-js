@@ -1,4 +1,5 @@
 import ko from "knockout";
+require("knockout.validation");
 import Extenders from "../extenders/Extenders";
 
 function State() {
@@ -33,12 +34,6 @@ function State() {
     .extend({ parseInt: true })
     .extend({ required: true })
     .extend({ number: true })
-    .extend({
-      pattern: {
-        params: "^(-?[1-9]+d*)$|^0$",
-        message: "That's and odd age for a person."
-      }
-    })
     .extend({ min: 18 })
     .extend({ max: 100 });
 
@@ -48,12 +43,6 @@ function State() {
     .extend({ required: true })
     .extend({ number: true })
     .extend({ min: 0 })
-    .extend({
-      pattern: {
-        params: "^(-?[1-9]+d*)$|^0$",
-        message: "Specify a score between 0 and 100."
-      }
-    })
     .extend({ max: 100 });
 
   this.validationModel = ko.validatedObservable({

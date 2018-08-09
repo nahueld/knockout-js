@@ -12,6 +12,11 @@ describe("LeadersList Component", () => {
   describe("template", () => {
     let leadersList;
 
+    after(() => {
+      ko.components.unregister(LeadersList.component);
+      ko.components.unregister(SelectField.component);
+    });
+
     before(() => {
       ko.components.register(LeadersList.component, {
         viewModel: LeadersList.viewModel,

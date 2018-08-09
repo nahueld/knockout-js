@@ -12,6 +12,13 @@ describe("App Component", () => {
     });
   });
 
+  after(() => {
+    componentsRegistry.forEach(c => {
+      const { component, ...rest } = c;
+      ko.components.unregister(component);
+    });
+  });
+
   it('is name is "app"', () => {
     expect(App.component).to.eqls("app");
   });

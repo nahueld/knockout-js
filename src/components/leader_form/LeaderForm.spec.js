@@ -22,6 +22,11 @@ describe("LeaderForm Component", () => {
       });
     });
 
+    after(() => {
+      ko.components.unregister(LeaderForm.component);
+      ko.components.unregister(FormField.component);
+    });
+
     it("should render leader form", () => {
       const leaderForm = renderComponent(LeaderForm, {
         fields: [
