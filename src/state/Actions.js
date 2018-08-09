@@ -1,7 +1,10 @@
 function Actions(state) {
   this.sortLeadersList = () => {
     let sorted = _(state.leaderEntries())
-      .orderBy(state.sortingFieldSelected().id, state.sortingOrderSelected().id)
+      .orderBy(
+        [state.sortingFieldSelected().id],
+        [state.sortingOrderSelected().id]
+      )
       .value();
     state.leaderEntries(sorted);
   };
