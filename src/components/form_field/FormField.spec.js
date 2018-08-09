@@ -1,7 +1,4 @@
 import FormField from "./FormField.component.js";
-import { expect } from "chai";
-import ko from "knockout";
-import { renderComponent } from "ko-component-tester";
 
 describe("FormField Component", () => {
   it('should be named as "form-field"', () => {

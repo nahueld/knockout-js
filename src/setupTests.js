@@ -1,10 +1,8 @@
-require('jsdom-global/register');
-global.expect = require('expect');
-global.$ = require('jquery');
-global.mount = function(template) {
-  return $(template);
-};
-
-global.mountWithWrapper = function(template, wrapper = 'div') {
-  return mount(`<${wrapper}> ${template} </${wrapper}>`);
-};
+require("jsdom-global/register");
+global.$ = require("jquery");
+global.expect = require("chai").expect;
+global.sinon = require("sinon");
+global.ko = require("knockout");
+require("knockout.validation");
+global.renderComponent = require("ko-component-tester").renderComponent;
+global.renderHtml = require("ko-component-tester").renderHtml;

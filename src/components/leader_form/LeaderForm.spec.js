@@ -1,8 +1,4 @@
 import LeaderForm from "./LeaderForm.component";
-import ko from "knockout";
-import { expect } from "chai";
-import sinon from "sinon";
-import { renderComponent } from "ko-component-tester";
 import FormField from "../form_field/FormField.component";
 
 describe("LeaderForm Component", () => {

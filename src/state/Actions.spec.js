@@ -1,10 +1,6 @@
-import { expect } from "chai";
-import ko from "knockout";
-require("knockout.validation");
 import Extenders from "../extenders/Extenders";
 import Actions from "./Actions";
 import State from "./State";
-import * as sinon from "sinon";
 
 describe("Actions", () => {
   let state;

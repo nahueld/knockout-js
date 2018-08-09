@@ -1,5 +1,4 @@
-import ko from "knockout";
-import { expect } from "chai";
+import * as ko from "knockout";
 import Extenders from "./Extenders";
 
 describe("Extenders", () => {
